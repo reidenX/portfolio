@@ -1,0 +1,454 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*COLORS*/
+  --color1: #2c2720;
+  --color2: #fff;
+  --color3: #000;
+
+  /*FONTS*/
+  --pt-sans: "PT Sans", sans-serif;
+  --poppins: "Poppins", sans-serif;
+
+  --regular: 400;
+  --light: 300;
+  --extra-light: 200;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--poppins);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container1 {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background-image: url(./images/joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+  background-size: cover;
+  display: grid;
+  place-items: center;
+}
+/*----------------PAGE1---------------------------*/
+
+.title {
+  max-width: 300px;
+}
+
+.title,
+.hero_title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero_title,
+.hero-links {
+  border-bottom: solid 0.5px white;
+}
+
+.title h1 {
+  font-size: 2rem;
+  text-align: center;
+  font-family: var(--pt-sans);
+  font-weight: var(--regular);
+}
+
+.hero_title {
+  height: 100px;
+  width: 100%;
+  justify-content: center;
+}
+
+.title p {
+  font-size: 1rem;
+  font-weight: var(--extra-light);
+}
+
+.title h1,
+.title p,
+.fab,
+.fas {
+  color: var(--color2);
+}
+
+.fab,
+.fas {
+  font-size: 1rem;
+  padding: 0.3em 0.8em;
+}
+
+.hero-links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+}
+
+/*TABLETS*/
+@media (min-width: 820px) {
+  .title {
+    max-width: 36.5rem;
+  }
+
+  .hero_title,
+  .hero-links {
+    border-bottom: solid 2px white;
+  }
+
+  .hero_title {
+    height: 200px;
+  }
+
+  .title h1 {
+    font-size: 3.9rem;
+  }
+
+  .title p {
+    font-size: 2rem;
+  }
+
+  .fab,
+  .fas {
+    font-size: 1.95625rem;
+    padding: 0.3em 0.8em;
+  }
+
+  .hero-links {
+    gap: 75px;
+  }
+}
+
+/*DESKTOP*/
+@media (min-width: 1550px) {
+  .fab,
+  .fas {
+    border-radius: 20px;
+    outline: solid 2px transparent;
+    transition: all ease-in-out 0.5s;
+  }
+
+  .fab:hover,
+  .fas:hover {
+    outline: solid 2px #fff;
+  }
+}
+
+/*------------------PAGE2----------------------------*/
+
+.container2 {
+  background-image: url(./images/page2background.png);
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.projects {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--color1);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.filter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color1);
+  opacity: 0;
+}
+
+.works {
+  width: 97%;
+  height: 98%;
+  outline: solid 1px var(--color2);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.project-link {
+  z-index: 3;
+  color: var(--color3);
+  font-family: var(--pt-sans);
+  font-weight: var(--regular);
+  font-size: 0.7rem;
+  background: var(--color2);
+  outline: solid transparent 2px;
+  margin-bottom: 5em;
+  width: 100px;
+  padding-block: 0.6em;
+  text-align: center;
+  border-radius: 10px;
+  transition: all ease 450ms;
+  will-change: transform;
+}
+
+.work {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30px;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: top center;
+}
+
+.work_1 {
+  background-image: url(./images/GuitarStore.png);
+  grid-row: 1/3;
+}
+
+/* RESPONSIVENESS */
+
+/* desktops */
+@media (min-width: 1024px) {
+  .projects {
+    width: 80%;
+    height: 80%;
+    border-radius: 5px;
+  }
+
+  .project-link {
+    font-size: 0.8rem;
+    width: 120px;
+  }
+
+  .work {
+    gap: 80px;
+  }
+
+  .works {
+    background-position: center;
+    height: 95%;
+    border-radius: 20px;
+    outline: solid 2px var(--color2);
+  }
+
+  .work:hover .filter {
+    opacity: 0.5;
+  }
+
+  .work:hover .project-link {
+    background: transparent;
+    outline: solid var(--color2) 1px;
+    color: var(--color2);
+  }
+
+  .project-link:hover {
+    transform: scale(1.2);
+  }
+}
+
+/*------------------PAGE3----------------------------*/
+
+footer {
+  height: 100vh;
+  background: var(--color1);
+}
+
+footer,
+.container3,
+.aboutme {
+  display: grid;
+  place-items: center;
+}
+
+.container3 {
+  height: 90vh;
+  width: 90%;
+  border: solid 1px var(--color2);
+  border-radius: 2px;
+}
+
+.aboutme {
+  height: 96%;
+  width: 90%;
+  border-radius: 20px;
+}
+
+.aboutme p,
+.skills {
+  font-size: 0.7rem;
+  font-weight: var(--extra-light);
+}
+
+.aboutme p,
+.aboutme h1,
+.aboutme li {
+  color: var(--color2);
+}
+
+.aboutme h1 {
+  font-family: var(--pt-sans);
+  font-weight: var(--regular);
+}
+
+.aboutme p,
+.line1,
+.line2 {
+  width: 95%;
+}
+
+.line1,
+.line2 {
+  height: 1px;
+  background: var(--color2);
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  align-items: center;
+  text-align: center;
+}
+
+.skills ul {
+  list-style: none;
+  line-height: 2;
+}
+
+.button {
+  width: 80px;
+  padding-block: 0.5em;
+  margin: 0 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.footerButtons {
+  display: flex;
+}
+
+.far,
+.far::after,
+.far::before {
+  display: none;
+}
+
+/*RESPONSIVENESS*/
+
+/*Tablets*/
+@media (min-width: 820px) {
+  .aboutme {
+    outline: solid 2px var(--color2);
+  }
+
+  .aboutme p,
+  .skills {
+    font-size: 1rem;
+  }
+
+  .aboutme p,
+  .line1,
+  .line2 {
+    width: 80%;
+  }
+
+  .line1,
+  .line2 {
+    height: 2px;
+  }
+
+  .skills {
+    width: 60%;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .button {
+    background-color: var(--color2);
+    width: 100px;
+    padding-block: 0.6em;
+    margin: 80px 20px;
+  }
+
+  .footerButtons {
+    gap: 40px;
+  }
+}
+/* Desktops */
+@media (min-width: 1024px) {
+  .skills {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: justify;
+    gap: 50px;
+  }
+
+  .aboutme {
+    width: 97%;
+  }
+
+  .container3 {
+    width: 60%;
+    border: solid 2px var(--color2);
+  }
+
+  .button {
+    transition: all ease-in-out 450ms;
+  }
+
+  .far,
+  .far::after,
+  .far::before {
+    display: inline-block;
+  }
+
+  .far {
+    position: relative;
+    color: var(--color2);
+    opacity: 0;
+    transition: all ease-in-out 350ms;
+  }
+
+  .fa-file {
+    transform: translate(-300%);
+  }
+
+  .fa-envelope {
+    transform: translate(250%);
+  }
+
+  .buttonHover:hover .button {
+    background: transparent;
+    color: var(--color2);
+    outline: solid 1px var(--color2);
+  }
+
+  .buttonHover:hover .far {
+    transform: translate(0);
+    opacity: 1;
+  }
+
+  .buttonHover a > input {
+    cursor: pointer;
+  }
+}
