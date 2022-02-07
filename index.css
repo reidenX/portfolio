@@ -223,6 +223,7 @@ img {
 
 .work_2 {
   background-image: url(./images/cart.png);
+  background-position: center;
 }
 
 .work_3,
@@ -244,7 +245,7 @@ img {
 /* desktops */
 @media (min-width: 1024px) {
   .projects {
-    width: 80%;
+    width: 50%;
     height: 80%;
     border-radius: 5px;
   }
@@ -272,8 +273,7 @@ img {
     height: 95%;
     border-radius: 20px;
     outline: solid 2px var(--color2);
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .work:hover .filter {
