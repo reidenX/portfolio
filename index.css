@@ -54,6 +54,81 @@ img {
   max-width: 300px;
 }
 
+.title-animation {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.title-animation div {
+  height: 43px;
+  width: 43px;
+  display: flex;
+  align-items: center;
+  transform: rotate(45deg);
+  animation: wheel 2s ease-in-out forwards;
+}
+
+@keyframes wheel {
+  100% {
+    transform: rotate(675deg);
+  }
+}
+
+.title-animation::after,
+.title-animation::before {
+  content: "";
+  position: absolute;
+  width: 46%;
+  height: 2px;
+  background-color: white;
+}
+
+.title-animation::after {
+  left: 0;
+  top: 50%;
+  transform: translate(-100%);
+  animation: line1 0.8s ease-in-out forwards;
+}
+
+.title-animation::before {
+  right: 0;
+  top: 50%;
+  transform: translate(100%);
+  animation: line2 0.8s ease-in-out forwards;
+}
+
+@keyframes line1 {
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes line2 {
+  100% {
+    transform: translate(0);
+  }
+}
+
+.title-animation div > span {
+  position: relative;
+}
+
+.title-animation div > span,
+.title-animation div > span::after {
+  width: 100%;
+  height: 2px;
+  background: white;
+}
+
+.title-animation div > span::after {
+  content: "";
+  position: absolute;
+  transform: rotate(90deg);
+}
+
 .title,
 .hero_title {
   display: flex;
@@ -102,6 +177,10 @@ img {
   display: flex;
   justify-content: center;
   gap: 45px;
+}
+
+.fa-folder-open::before {
+  font-size: 1.5rem;
 }
 
 /*TABLETS*/
