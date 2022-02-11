@@ -41,7 +41,7 @@ img {
 
 .container1 {
   height: 100vh;
-  width: 101%;
+  width: 100%;
   overflow-x: hidden;
   background-image: url(./images/joshua-bartell-6vvIBTvL90A-unsplash.jpg);
   background-size: cover;
@@ -54,11 +54,37 @@ img {
   max-width: 300px;
 }
 
+/* Transitions */
+.title h1,
+.title p,
+.project-link,
+.fab,
+.fas,
+.button,
+.far {
+  transition: all ease-in-out 450ms;
+}
+
+/* Positioned relative */
+.title-animation,
+.title-animation div > span,
+.work,
+.far {
+  position: relative;
+}
+
+/* Positioned Absolutely */
+.title-animation::after,
+.title-animation::before,
+.title-animation div > span::after,
+.filter {
+  position: absolute;
+}
+
 .title-animation {
   width: 100%;
   display: grid;
   place-items: center;
-  position: relative;
   overflow: hidden;
 }
 
@@ -80,7 +106,6 @@ img {
 .title-animation::after,
 .title-animation::before {
   content: "";
-  position: absolute;
   width: 46%;
   height: 1px;
   background-color: white;
@@ -112,10 +137,6 @@ img {
   }
 }
 
-.title-animation div > span {
-  position: relative;
-}
-
 .title-animation div > span,
 .title-animation div > span::after {
   width: 100%;
@@ -125,7 +146,6 @@ img {
 
 .title-animation div > span::after {
   content: "";
-  position: absolute;
   transform: rotate(90deg);
 }
 
@@ -167,7 +187,6 @@ img {
 .fab,
 .fas {
   color: var(--color2);
-  transition: all ease-in-out 350ms;
 }
 
 .fab {
@@ -245,7 +264,6 @@ img {
   .fas {
     border-radius: 20px;
     outline: solid 2px transparent;
-    transition: all ease-in-out 0.5s;
   }
 
   .fab:hover,
@@ -274,7 +292,6 @@ img {
 }
 
 .filter {
-  position: absolute;
   width: 100%;
   height: 100%;
   background-color: var(--color1);
@@ -302,12 +319,10 @@ img {
   padding-block: 0.6em;
   text-align: center;
   border-radius: 10px;
-  transition: all ease 450ms;
   will-change: transform;
 }
 
 .work {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -569,10 +584,6 @@ footer,
     font-size: 1rem;
   }
 
-  .button {
-    transition: all ease-in-out 450ms;
-  }
-
   .far,
   .far::after,
   .far::before {
@@ -580,10 +591,8 @@ footer,
   }
 
   .far {
-    position: relative;
     color: var(--color2);
     opacity: 0;
-    transition: all ease-in-out 350ms;
   }
 
   .fa-file {
