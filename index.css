@@ -167,6 +167,7 @@ img {
 .fab,
 .fas {
   color: var(--color2);
+  transition: all ease-in-out 350ms;
 }
 
 .fab {
