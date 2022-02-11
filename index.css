@@ -41,7 +41,7 @@ img {
 
 .container1 {
   height: 100vh;
-  width: 100%;
+  width: 101%;
   overflow-x: hidden;
   background-image: url(./images/joshua-bartell-6vvIBTvL90A-unsplash.jpg);
   background-size: cover;
@@ -63,8 +63,8 @@ img {
 }
 
 .title-animation div {
-  height: 43px;
-  width: 43px;
+  height: 23px;
+  width: 23px;
   display: flex;
   align-items: center;
   transform: rotate(45deg);
@@ -82,7 +82,7 @@ img {
   content: "";
   position: absolute;
   width: 46%;
-  height: 2px;
+  height: 1px;
   background-color: white;
 }
 
@@ -119,7 +119,7 @@ img {
 .title-animation div > span,
 .title-animation div > span::after {
   width: 100%;
-  height: 2px;
+  height: 1px;
   background: white;
 }
 
@@ -138,7 +138,7 @@ img {
 
 .hero_title,
 .hero-links {
-  border-bottom: solid 0.5px white;
+  border-bottom: solid 1px white;
 }
 
 .title h1 {
@@ -146,6 +146,8 @@ img {
   text-align: center;
   font-family: var(--pt-sans);
   font-weight: var(--regular);
+  margin: 10px 0;
+  line-height: 1;
 }
 
 .hero_title {
@@ -157,6 +159,7 @@ img {
 .title p {
   font-size: 1rem;
   font-weight: var(--extra-light);
+  margin-bottom: 15px;
 }
 
 .title h1,
@@ -166,10 +169,13 @@ img {
   color: var(--color2);
 }
 
-.fab,
-.fas {
+.fab {
   font-size: 1rem;
   padding: 0.3em 0.8em;
+}
+
+.fas {
+  padding: 0.3em 0.65em;
 }
 
 .hero-links {
@@ -177,10 +183,6 @@ img {
   display: flex;
   justify-content: center;
   gap: 45px;
-}
-
-.fa-folder-open::before {
-  font-size: 1.5rem;
 }
 
 /*TABLETS*/
@@ -194,6 +196,11 @@ img {
     border-bottom: solid 2px white;
   }
 
+  .title-animation div {
+    height: 43px;
+    width: 43px;
+  }
+
   .hero_title {
     height: 200px;
   }
@@ -204,6 +211,7 @@ img {
 
   .title p {
     font-size: 2rem;
+    margin-bottom: 0;
   }
 
   .fab,
@@ -215,8 +223,21 @@ img {
   .hero-links {
     gap: 75px;
   }
-}
 
+  .title-animation::after,
+  .title-animation::before {
+    height: 2px;
+  }
+
+  .title-animation div > span,
+  .title-animation div > span::after {
+    height: 2px;
+  }
+
+  .fas {
+    padding: 0.3em 0.6em;
+  }
+}
 /*DESKTOP*/
 @media (min-width: 1550px) {
   .fab,
