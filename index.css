@@ -114,15 +114,15 @@ img {
 .title-animation::after {
   left: 0;
   top: 50%;
-  transform: translate(-100%);
-  animation: line1 0.8s ease-in-out forwards;
+  transform: translate(-101%);
+  animation: line1 0.8s ease-in-out 0.5s forwards;
 }
 
 .title-animation::before {
   right: 0;
   top: 50%;
   transform: translate(100%);
-  animation: line2 0.8s ease-in-out forwards;
+  animation: line2 0.8s ease-in-out 0.5s forwards;
 }
 
 @keyframes line1 {
@@ -195,7 +195,7 @@ img {
 }
 
 .fas {
-  padding: 0.3em 0.65em;
+  padding: 0.3em 0.6em;
 }
 
 .hero-links {
@@ -203,6 +203,40 @@ img {
   display: flex;
   justify-content: center;
   gap: 45px;
+  overflow: hidden;
+}
+
+.fa-github-square {
+  transform: translate(-300%);
+  animation: link1 0.8s ease-in-out 1.2s forwards;
+}
+
+@keyframes link1 {
+  to {
+    transform: translate(0);
+  }
+}
+
+.fa-linkedin {
+  transform: translate(-600%);
+  animation: link2 0.8s ease-in-out 0.8s forwards;
+}
+
+@keyframes link2 {
+  to {
+    transform: translate(0);
+  }
+}
+
+.fa-folder-open {
+  transform: translate(-900%);
+  animation: link3 0.8s ease-in-out 0.5s forwards;
+}
+
+@keyframes link3 {
+  to {
+    transform: translate(0);
+  }
 }
 
 /*TABLETS*/
