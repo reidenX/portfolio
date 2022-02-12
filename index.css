@@ -94,7 +94,7 @@ img {
   display: flex;
   align-items: center;
   transform: rotate(45deg);
-  animation: wheel 2s ease-in-out forwards;
+  animation: wheel 2s ease-in-out 1s forwards;
 }
 
 @keyframes wheel {
@@ -115,14 +115,14 @@ img {
   left: 0;
   top: 50%;
   transform: translate(-101%);
-  animation: line1 0.8s ease-in-out 0.5s forwards;
+  animation: line1 0.8s ease-in-out 1.5s forwards;
 }
 
 .title-animation::before {
   right: 0;
   top: 50%;
   transform: translate(100%);
-  animation: line2 0.8s ease-in-out 0.5s forwards;
+  animation: line2 0.8s ease-in-out 1.5s forwards;
 }
 
 @keyframes line1 {
@@ -219,7 +219,7 @@ img {
 
 .fa-linkedin {
   transform: translate(-600%);
-  animation: link2 0.8s ease-in-out 0.8s forwards;
+  animation: link2 0.8s ease-in-out 1.8s forwards;
 }
 
 @keyframes link2 {
@@ -230,7 +230,7 @@ img {
 
 .fa-folder-open {
   transform: translate(-900%);
-  animation: link3 0.8s ease-in-out 0.5s forwards;
+  animation: link3 0.8s ease-in-out 1.5s forwards;
 }
 
 @keyframes link3 {
