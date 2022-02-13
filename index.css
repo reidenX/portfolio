@@ -19,6 +19,9 @@
   --regular: 400;
   --light: 300;
   --extra-light: 200;
+
+  --pseudo-animation1: none;
+  --pseudo-animation2: none;
 }
 
 html {
@@ -88,12 +91,15 @@ img {
   overflow: hidden;
 }
 
-.title-animation div {
+.xwheel {
   height: 23px;
   width: 23px;
   display: flex;
   align-items: center;
   transform: rotate(45deg);
+}
+
+.xwheel-animation {
   animation: wheel 2s ease-in-out forwards;
 }
 
@@ -115,14 +121,14 @@ img {
   left: 0;
   top: 50%;
   transform: translate(-101%);
-  animation: line1 0.8s ease-in-out 0.5s forwards;
+  animation: var(--pseudo-animation1);
 }
 
 .title-animation::before {
   right: 0;
   top: 50%;
   transform: translate(100%);
-  animation: line2 0.8s ease-in-out 0.5s forwards;
+  animation: var(--pseudo-animation2);
 }
 
 @keyframes line1 {
@@ -208,6 +214,9 @@ img {
 
 .fa-github-square {
   transform: translate(-300%);
+}
+
+.link1-animation {
   animation: link1 0.8s ease-in-out 1.2s forwards;
 }
 
@@ -219,6 +228,9 @@ img {
 
 .fa-linkedin {
   transform: translate(-600%);
+}
+
+.link2-animation {
   animation: link2 0.8s ease-in-out 0.8s forwards;
 }
 
@@ -230,6 +242,9 @@ img {
 
 .fa-folder-open {
   transform: translate(-900%);
+}
+
+.link3-animation {
   animation: link3 0.8s ease-in-out 0.5s forwards;
 }
 
