@@ -6,10 +6,25 @@
   box-sizing: border-box;
 }
 
+html::-webkit-scrollbar {
+  width: 0.5vw;
+  background-color: rgb(43, 33, 22);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(170, 156, 130);
+  border-radius: 10px;
+}
+
 :root {
   /*COLORS*/
-  --color1: #2c2720;
-  --color2: #fff;
+  --color1: #16130f;
+  --color2: rgb(233, 233, 233);
   --color3: #000;
 
   /*FONTS*/
@@ -42,6 +57,10 @@ img {
   display: block;
 }
 
+li {
+  list-style: none;
+}
+
 .container1 {
   height: 100vh;
   width: 100%;
@@ -65,7 +84,7 @@ img {
 .fas,
 .button,
 .far {
-  transition: all ease-in-out 450ms;
+  transition: all ease-in-out 350ms;
 }
 
 /* Positioned relative */
@@ -322,37 +341,81 @@ img {
 }
 
 /*------------------PAGE2----------------------------*/
-
-.container2 {
-  background-image: url(./images/page2background.png);
-  background-size: cover;
-  height: 100vh;
-  display: grid;
-  place-items: center;
+.displayNone {
+  display: none;
 }
 
-.projects {
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  place-items: center;
-  background: var(--color1);
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+.fixedImage {
+  position: fixed;
+  z-index: -1;
+  width: 2920px;
+  top: 0;
+  bottom: 0;
+}
+
+.sliderButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: transparent;
+  cursor: pointer;
+  aspect-ratio: 1;
+  border: none;
+}
+
+.container2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-block: 30px solid black;
+  height: 50vh;
+  gap: 10px;
 }
 
 .filter {
-  width: 100%;
-  height: 100%;
+  z-index: 2;
+  inset: 0;
+  position: absolute;
   background-color: var(--color1);
-  opacity: 0.5;
+  opacity: 0;
 }
 
-.works {
-  width: 97%;
-  height: 98%;
-  outline: solid 1px var(--color2);
-  overflow: hidden;
-  display: grid;
+.projects {
+  width: 95%;
+  height: 65%;
+  position: relative;
+}
+
+.work {
+  inset: 0;
+  position: absolute;
+  opacity: 0;
+  transition: opacity ease-in-out 350ms;
+  transition-delay: 350ms;
+}
+
+.work[data-active] {
+  z-index: 1;
+  opacity: 1;
+  transition-delay: 0ms;
+}
+
+.work > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projectButtons {
+  position: absolute;
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  justify-content: center;
+  bottom: 30px;
 }
 
 .project-link {
@@ -361,9 +424,8 @@ img {
   font-family: var(--pt-sans);
   font-weight: var(--regular);
   font-size: 0.7rem;
-  border: solid 1px var(--color2);
-  outline: solid transparent 2px;
-  margin-bottom: 5em;
+  background: var(--color2);
+  color: var(--color3);
   width: 100px;
   padding-block: 0.6em;
   text-align: center;
@@ -371,78 +433,61 @@ img {
   will-change: transform;
 }
 
-.work {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 30px;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: top center;
+@media (min-width: 540px) {
+  .container2 {
+    height: 70vh;
+  }
 }
 
-.work_1 {
-  background-image: url(./images/GuitarStore.png);
+@media (min-width: 912px) {
+  .container2 {
+    height: 60vh;
+    gap: 20px;
+  }
+
+  .sliderButton {
+    height: 90px;
+  }
+
+  .projectButtons {
+    bottom: 120px;
+  }
+
+  .project-link {
+    font-size: 1rem;
+    width: 150px;
+  }
 }
 
-.work_2 {
-  background-image: url(./images/cart.png);
-  background-position: center;
-}
-
-.work_3,
-.work_4 {
-  display: grid;
-  place-items: center;
-}
-
-.work_3 h1,
-.work_4 h1 {
-  color: var(--color2);
-  font-weight: var(--extra-light);
-  font-family: var(--poppins);
-  font-size: 1rem;
-}
-
-/* RESPONSIVENESS */
-
-/* desktops */
 @media (min-width: 1024px) {
+  .fixedImage {
+    width: 1920px;
+  }
+
+  .container2 {
+    flex-direction: row;
+    height: 100vh;
+  }
+
   .projects {
-    width: 50%;
-    height: 80%;
-    border-radius: 5px;
+    width: 90%;
+    height: 87%;
+  }
+}
+
+@media (min-width: 1650px) {
+  .projects {
+    width: 70%;
+    height: 85%;
   }
 
   .filter {
     opacity: 0;
+    transition: all ease-in-out 350ms;
   }
 
-  .project-link {
-    font-size: 0.8rem;
-    width: 120px;
-    margin-bottom: 2em;
-    background: var(--color2);
-    color: var(--color3);
-    border: none;
-  }
-
-  .project-link-dark {
-    color: var(--color2);
-    background-color: var(--color1);
-  }
-
-  .work {
-    gap: 40px;
-  }
-
-  .works {
-    background-position: center;
-    height: 95%;
-    border-radius: 20px;
-    outline: solid 2px var(--color2);
-    grid-template-columns: 1fr;
+  .work:hover {
+    background-size: 105% 105%;
   }
 
   .work:hover .filter {
@@ -456,14 +501,11 @@ img {
   }
 
   .project-link:hover {
-    transform: scale(1.2);
-  }
-
-  .work_3 h1,
-  .work_4 h1 {
-    font-size: 1.3rem;
+    transform: scale(1.1);
   }
 }
+
+/* RESPONSIVENESS */
 
 /*------------------PAGE3----------------------------*/
 

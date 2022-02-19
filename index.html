@@ -47,41 +47,75 @@
       </div>
     </header>
     <main>
-      <div class="container2" id="projects">
+      <div class="fixedImage">
+        <img src="./images/pexels-elevate-1267358.jpg" alt="" />
+      </div>
+
+      <div class="container2" id="projects" data-carousel>
+        <button class="sliderButton buttonLeft" data-button="previous">
+          <img src="./images/ArrowLeft.svg" alt="arrow left" />
+        </button>
         <div class="projects">
-          <div class="works">
+          <ul class="works" data-slides>
             <!--PROJECT1-->
-            <div class="work_1 work">
+            <li class="work_1 work" data-active>
               <div class="filter"></div>
-              <a
-                href="https://reidenx.github.io/Guitar-shop/"
-                class="project-link"
-                target="_blank"
-                ><div class="demo">Show Project</div></a
-              ><a
-                href="https://github.com/reidenX/Guitar-shop"
-                target="_blank"
-                class="project-link"
-                ><div class="codes">Show Code</div></a
-              >
-            </div>
+              <img src="./images/GuitarStore.png" alt="" />
+              <div class="projectButtons">
+                <a
+                  href="https://reidenx.github.io/Guitar-shop/"
+                  class="project-link"
+                  target="_blank"
+                  ><div class="demo">Show Project</div></a
+                ><a
+                  href="https://github.com/reidenX/Guitar-shop"
+                  target="_blank"
+                  class="project-link"
+                  ><div class="codes">Show Code</div></a
+                >
+              </div>
+            </li>
             <!--PROJECT2-->
-            <div class="work_2 work">
+            <li class="work_1 work">
               <div class="filter"></div>
-              <a
-                href="https://reidenx.github.io/cart/"
-                class="project-link project-link-dark"
-                target="_blank"
-                ><div class="demo">Show Project</div></a
-              ><a
-                href="https://github.com/reidenX/cart"
-                target="_blank"
-                class="project-link project-link-dark"
-                ><div class="codes">Show Code</div></a
-              >
-            </div>
-          </div>
+              <img src="./images/cart.png" alt="" />
+              <div class="projectButtons">
+                <a
+                  href="https://reidenx.github.io/cart/"
+                  class="project-link"
+                  target="_blank"
+                  ><div class="demo">Show Project</div></a
+                ><a
+                  href="https://github.com/reidenX/cart"
+                  target="_blank"
+                  class="project-link"
+                  ><div class="codes">Show Code</div></a
+                >
+              </div>
+            </li>
+            <!-- PROJECT3 -->
+            <li class="work_1 work">
+              <div class="filter"></div>
+              <img src="./images/Screenshot (255).png" alt="" />
+              <div class="projectButtons">
+                <a
+                  href="https://reidenx.github.io/weather-application/"
+                  class="project-link"
+                  target="_blank"
+                  ><div class="demo">Show Project</div></a
+                ><a
+                  href="https://github.com/reidenX/weather-application"
+                  target="_blank"
+                  class="project-link"
+                  ><div class="codes">Show Code</div></a
+                >
+              </div>
+            </li>
+          </ul>
         </div>
+        <button class="sliderButton buttonRight" data-button="next">
+          <img src="./images/ArrowRight.svg" alt="arrow right" />
+        </button>
       </div>
     </main>
     <footer>
@@ -133,6 +167,6 @@
       </div>
     </footer>
 
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
   </body>
 </html>
