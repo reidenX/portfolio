@@ -348,7 +348,7 @@ li {
 .fixedImage {
   position: fixed;
   z-index: -1;
-  width: 2920px;
+  min-width: 2920px;
   top: 0;
   bottom: 0;
 }
@@ -461,7 +461,7 @@ li {
 
 @media (min-width: 1024px) {
   .fixedImage {
-    width: 1920px;
+    min-width: 1920px;
   }
 
   .container2 {
