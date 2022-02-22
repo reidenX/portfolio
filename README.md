@@ -16,6 +16,12 @@ I did it with a lot of research and trials.
 ##### The solution I found
 
 * adding the windows.addEventListener('load' => {})
+
+##### I have learned about image optimization for faster performance
+
+##### The solution I found
+
+*I used compressjpeg.com to optimize images by reducing size with lossless quality
 ___
 
 ### Future Plans
