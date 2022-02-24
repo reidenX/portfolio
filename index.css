@@ -48,6 +48,10 @@ body {
   overflow-x: hidden;
 }
 
+.hideScrollbar {
+  overflow-y: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -61,6 +65,20 @@ li {
   list-style: none;
 }
 
+.loading-animation {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  z-index: 99999;
+  width: 100%;
+  height: 100vh;
+  background: var(--color1);
+}
+
+.ringRemove {
+  display: none;
+}
+
 .container1 {
   height: 100vh;
   width: 100%;
@@ -69,6 +87,44 @@ li {
   background-size: cover;
   display: grid;
   place-items: center;
+}
+
+.ringContainer {
+  position: relative;
+}
+
+.circle {
+  border-radius: 50%;
+  border: 4px solid gray;
+  height: 50px;
+  width: 50px;
+}
+
+.box {
+  position: absolute;
+  background: var(--color1);
+  width: 20px;
+  height: 20px;
+  right: 0;
+  animation: box 1s linear forwards infinite;
+}
+
+@keyframes box {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(-150%);
+  }
+  50% {
+    transform: translate(-150%, 150%);
+  }
+  75% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translate(0);
+  }
 }
 /*----------------PAGE1---------------------------*/
 
@@ -116,6 +172,19 @@ li {
   display: flex;
   align-items: center;
   transform: rotate(45deg);
+}
+
+.xwheel:hover {
+  animation: wheelhover 1s linear infinite forwards;
+}
+
+@keyframes wheelhover {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .xwheel-animation {
