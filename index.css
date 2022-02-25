@@ -24,7 +24,7 @@ html::-webkit-scrollbar {
 :root {
   /*COLORS*/
   --color1: #16130f;
-  --color2: rgb(233, 233, 233);
+  --color2: rgb(216, 216, 216);
   --color3: #000;
 
   /*FONTS*/
@@ -65,28 +65,24 @@ li {
   list-style: none;
 }
 
-.loading-animation {
-  position: fixed;
+.loading-animation,
+.container1 {
   display: grid;
   place-items: center;
-  z-index: 99999;
   width: 100%;
   height: 100vh;
+}
+
+.loading-animation {
+  position: fixed;
+  z-index: 99999;
   background: var(--color1);
 }
 
+/* Removes Loading animation when 
+   website fully loads */
 .ringRemove {
   display: none;
-}
-
-.container1 {
-  height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-  background-image: url(./images/joshua-bartell-6vvIBTvL90A-unsplash.jpg);
-  background-size: cover;
-  display: grid;
-  place-items: center;
 }
 
 .ringContainer {
@@ -100,6 +96,8 @@ li {
   width: 50px;
 }
 
+/* div that covers a 
+    small part of the ring */
 .box {
   position: absolute;
   background: var(--color1);
@@ -126,7 +124,14 @@ li {
     transform: translate(0);
   }
 }
+
 /*----------------PAGE1---------------------------*/
+
+.container1 {
+  overflow-x: hidden;
+  background-image: url(./images/joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+  background-size: cover;
+}
 
 .title {
   max-width: 300px;
@@ -439,7 +444,7 @@ li {
   justify-content: center;
   flex-direction: column;
   border-block: 30px solid black;
-  height: 50vh;
+  height: 60vh;
   gap: 10px;
 }
 
@@ -448,7 +453,7 @@ li {
   inset: 0;
   position: absolute;
   background-color: var(--color1);
-  opacity: 0;
+  opacity: 0.5;
 }
 
 .projects {
@@ -463,6 +468,34 @@ li {
   opacity: 0;
   transition: opacity ease-in-out 350ms;
   transition-delay: 350ms;
+}
+
+.work,
+.workDescription {
+  display: flex;
+}
+
+.workDescription {
+  position: absolute;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 3;
+  margin: 5% 5%;
+}
+
+.work h1,
+.work p {
+  color: white;
+}
+
+.work h1 {
+  font-family: var(--pt-sans);
+  font-size: 1.2rem;
+}
+
+.work p {
+  font-weight: var(--extra-light);
+  font-size: 0.7rem;
 }
 
 .work[data-active] {
@@ -481,7 +514,7 @@ li {
 .projectButtons {
   position: absolute;
   display: flex;
-  gap: 40px;
+  gap: 20px;
   width: 100%;
   justify-content: center;
   bottom: 30px;
@@ -492,19 +525,26 @@ li {
   color: var(--color2);
   font-family: var(--pt-sans);
   font-weight: var(--regular);
-  font-size: 0.7rem;
-  background: var(--color2);
-  color: var(--color3);
-  width: 100px;
+  font-size: 0.6rem;
+  border: solid 1px var(--color2);
+  color: var(--color2);
+  width: 80px;
   padding-block: 0.6em;
   text-align: center;
   border-radius: 10px;
   will-change: transform;
 }
 
+/* RESPONSIVENESS */
+
 @media (min-width: 540px) {
   .container2 {
     height: 70vh;
+  }
+
+  .workDescription {
+    width: 60%;
+    gap: 30px;
   }
 }
 
@@ -542,6 +582,18 @@ li {
     width: 90%;
     height: 87%;
   }
+
+  .work h1 {
+    font-size: 2rem;
+  }
+
+  .work p {
+    font-size: 1rem;
+  }
+
+  .projectButtons {
+    bottom: 40px;
+  }
 }
 
 @media (min-width: 1650px) {
@@ -550,17 +602,42 @@ li {
     height: 85%;
   }
 
-  .filter {
+  .workDescription {
+    align-self: center;
+    width: 30%;
+    gap: 50px;
+  }
+
+  .work h1 {
+    font-size: 3rem;
+  }
+
+  .work p {
+    line-height: 1.7;
+    font-size: 1.2rem;
+  }
+
+  .filter,
+  .workDescription {
     opacity: 0;
     transition: all ease-in-out 350ms;
+  }
+
+  .projectButtons {
+    bottom: 120px;
+    gap: 40px;
   }
 
   .work:hover {
     background-size: 105% 105%;
   }
 
+  .work:hover .workDescription {
+    opacity: 1;
+  }
+
   .work:hover .filter {
-    opacity: 0.5;
+    opacity: 0.7;
   }
 
   .work:hover .project-link {
@@ -569,12 +646,15 @@ li {
     color: var(--color2);
   }
 
+  .project-link {
+    background: var(--color2);
+    color: var(--color3);
+  }
+
   .project-link:hover {
     transform: scale(1.1);
   }
 }
-
-/* RESPONSIVENESS */
 
 /*------------------PAGE3----------------------------*/
 
