@@ -421,7 +421,7 @@ li {
 
 .fixedImage {
   position: fixed;
-  z-index: -1;
+  z-index: -4;
   min-width: 2920px;
   top: 0;
   bottom: 0;
@@ -661,6 +661,20 @@ li {
 footer {
   height: 100vh;
   background: var(--color1);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.texture {
+  position: absolute;
+  font-size: 25rem;
+  z-index: -1;
+  opacity: 0.005;
+  font-family: var(--pt-sans);
+  font-weight: var(--regular);
+  color: white;
+  transform: rotate(30deg);
 }
 
 footer,
