@@ -1,10 +1,4 @@
-const xwheel = document.querySelector(".xwheel");
-const link1 = document.querySelector(".fa-github-square");
-const link2 = document.querySelector(".fa-linkedin");
-const link3 = document.querySelector(".fa-folder-open");
-const body = document.querySelector("body");
 const ring = document.querySelector(".loading-animation");
-
 const buttons = document.querySelectorAll("[data-button]");
 
 buttons.forEach((button) => {
@@ -23,6 +17,23 @@ buttons.forEach((button) => {
     delete activeSlide.dataset.active;
   });
 });
+
+//=========Arrow back to top============//
+
+const backToTop = document.querySelector(".backToTopArrow");
+
+window.addEventListener("scroll", () => {
+  if (pageYOffset < 500) return backToTop.classList.add("backToTopArrowHidden");
+  backToTop.classList.remove("backToTopArrowHidden");
+});
+
+//=========Hero Animations============//
+
+const xwheel = document.querySelector(".xwheel");
+const link1 = document.querySelector(".fa-github-square");
+const link2 = document.querySelector(".fa-linkedin");
+const link3 = document.querySelector(".fa-folder-open");
+const body = document.querySelector("body");
 
 window.addEventListener("load", () => {
   body.classList.remove("hideScrollbar");
