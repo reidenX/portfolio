@@ -130,10 +130,10 @@ li {
   display: flex;
   justify-content: center;
   z-index: 9999;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   bottom: 50px;
-  right: 50px;
+  right: 20px;
   transition: all ease-in-out 350ms;
 }
 
@@ -158,17 +158,33 @@ li {
 }
 
 .backToTopArrow div::after {
-  left: 10px;
+  left: 5px;
   transform: rotate(-45deg) translate(1px, -2px);
 }
 
 .backToTopArrow div::before {
-  right: 10px;
+  right: 5px;
   transform: rotate(45deg) translate(-1px, -2px);
 }
 
 .backToTopArrowHidden {
   opacity: 0;
+}
+
+@media (min-width: 400px) {
+  .backToTopArrow {
+    width: 50px;
+    height: 50px;
+    right: 50px;
+  }
+
+  .backToTopArrow div::after {
+    left: 10px;
+  }
+
+  .backToTopArrow div::before {
+    right: 10px;
+  }
 }
 
 /*----------------PAGE1---------------------------*/
